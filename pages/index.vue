@@ -1,5 +1,5 @@
 <template>
-    <NavBar />
+  <HomeView />
 </template>
 
 <script>

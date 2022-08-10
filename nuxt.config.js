@@ -14,6 +14,12 @@ export default {
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [],
 
+  // Server
+  server: {
+    host: 'localhost',
+    port: '3000'
+  },
+
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],
 
@@ -24,8 +30,6 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
-    // https://go.nuxtjs.dev/tailwindcss
-    '@nuxtjs/tailwindcss',
     '@nuxtjs/vuetify',
   ],
 
@@ -39,6 +43,12 @@ export default {
   pwa: {
     manifest: {
       lang: 'en',
+    },
+  },
+
+  vuetify: {
+    theme: {
+      dark: true,
     },
   },
 
