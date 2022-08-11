@@ -1,8 +1,8 @@
 <template>
-  <v-app>
+  <div class="d-flex flex-column justify-center">
     <h1 class="text-center">Calendrier</h1>
-    <v-calendar> </v-calendar>
-  </v-app>
+    <v-date-picker locale="fr"> </v-date-picker>
+  </div>
 </template>
 
 <script>
