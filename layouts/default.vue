@@ -2,13 +2,12 @@
   <v-app>
     <v-navigation-drawer
       v-model="drawer"
-      :mini-variant="miniVariant"
       :clipped="clipped"
       app
     >
       <v-list>
         <v-list-item
-          v-for="(item, i) in items"
+          v-for="(item, i) in leftNav"
           :key="i"
           :to="item.to"
           router
@@ -28,35 +27,14 @@
       <v-spacer />
       <v-toolbar-title v-text="title" />
       <v-spacer />
-      <v-switch
-        v-model="$vuetify.theme.dark"
-        color="black"
-        class="my-auto"
-      ></v-switch>
+      <v-switch v-model="$vuetify.theme.dark" color="black"></v-switch>
     </v-app-bar>
     <v-main>
       <v-container>
         <Nuxt />
       </v-container>
     </v-main>
-    <v-bottom-navigation v-model="value" :color="color" grow fixed>
-      <v-btn>
-        <span>Accueil</span>
-        <v-icon>mdi-home</v-icon>
-      </v-btn>
-      <v-btn>
-        <span>Réserver</span>
-        <v-icon>mdi-calendar-search</v-icon>
-      </v-btn>
-      <v-btn>
-        <span>Appeler</span>
-        <v-icon>mdi-phone</v-icon>
-      </v-btn>
-      <v-btn>
-        <span>Adresse</span>
-        <v-icon>mdi-google-maps</v-icon>
-      </v-btn>
-    </v-bottom-navigation>
+    <AccueilBottomNav />
   </v-app>
 </template>
 
@@ -65,14 +43,10 @@ export default {
   name: 'DefaultLayout',
   data() {
     return {
-      clipped: false,
-      drawer: false,
-      fixed: false,
-      value: null,
-      items: [
+      leftNav: [
         {
           icon: 'mdi-apps',
-          title: 'Welcome',
+          title: 'Bienvenue',
           to: '/',
         },
         {
@@ -81,25 +55,10 @@ export default {
           to: '/inspire',
         },
       ],
-      miniVariant: false,
+      clipped: false,
+      drawer: false,
       title: 'Brand',
     }
-  },
-  computed: {
-    color() {
-      switch (this.value) {
-        case 0:
-          return 'blue darken-1'
-        case 1:
-          return 'orange'
-        case 2:
-          return 'green'
-        case 3:
-          return 'red'
-        default:
-          return null
-      }
-    },
   },
 }
 </script>
@@ -107,10 +66,4 @@ export default {
 .v-messages {
   display: none;
 }
-.v-item-group.v-bottom-navigation .v-btn {
-  font-size: 0.6rem;
-}
-/* .v-icon.v-icon {
-  font-size: 22px;
-} */
 </style>

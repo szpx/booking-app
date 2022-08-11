@@ -71,7 +71,9 @@
 </template>
 
 <script>
-export default {}
+export default {
+  name: 'ContentV',
+}
 </script>
 
 <style></style>

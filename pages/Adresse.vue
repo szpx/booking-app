@@ -1,11 +1,13 @@
 <template>
   <v-app>
-    <AccueilContentV />
+    <AdresseContentV />
   </v-app>
 </template>
 
 <script>
 export default {
-  name: 'IndexPage',
+  name: 'AdressePage',
 }
 </script>
+
+<style></style>
